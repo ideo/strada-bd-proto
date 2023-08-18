@@ -36,7 +36,7 @@ st.set_page_config(
     page_icon="🤑")
 
 st.title('🤑 Learner Earnings Explorer')
-st.write("Select your institution to view earnings data from graduates of your certificate programs.")
+st.write("Select your institution to view earnings data from graduates of your certificate programs. Lines represent 50th percentile earnings, and the colored bands show the lower quartile and upper quartile.")
 st.markdown("_Powered by experimental [data from the US Census Bureau](https://lehd.ces.census.gov/data/pseo_experimental.html). Only supports Texas institutions at this time._")
 grouped_data = dfe[dfe['agg_level_pseo'] == 46].groupby(
     ['label_inst', 'label', 'label_deg', 'grad_cohort'])[[c for c in dfe.columns if "earnings" in c]].sum()
